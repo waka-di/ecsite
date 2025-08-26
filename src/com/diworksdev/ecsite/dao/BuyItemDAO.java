@@ -3,6 +3,7 @@ package com.diworksdev.ecsite.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
 import com.diworksdev.ecsite.dto.BuyItemDTO;
 import com.diworksdev.ecsite.util.DBConnector;
 
@@ -25,6 +26,6 @@ public class BuyItemDAO {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
+		return buyItemDTO;
 	}
-	return buyItemDTO;
 }
