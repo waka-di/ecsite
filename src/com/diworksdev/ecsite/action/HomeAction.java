@@ -12,15 +12,15 @@ public class HomeAction extends ActionSupport implements SessionAware{
 	public Map<String, Object> session;
 	public String execute() {
 		String result = "login";
-		if (session.containsKey("login_user_id")) {
+		if (session.containsKey("login_user_id")) {  //ログイン済み判定を行う
 			BuyItemDAO buyItemDAO = new BuyItemDAO();
 			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
-			session.put("id", buyItemDTO.getId());
+			session.put("id", buyItemDTO.getId());                //DBから取得下商品情報をsessionに格納
 			session. put("buyItem_name",buyItemDTO.getItemName());
 			session.put("buyItem_price", buyItemDTO.getItemPrice());
 			result = SUCCESS;
 		}
-		return result;
+		return result;  //ログインはSUCCESS、ログインしてないとloginを返す
 	}
 	
 	@Override

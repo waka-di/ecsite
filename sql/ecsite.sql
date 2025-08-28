@@ -11,7 +11,7 @@ create table login_user_transaction(
 	id int not null primary key auto_increment,
 	login_id varchar(16) unique,
 	login_pass varchar(16),
-	user_namevarchar(50),
+	user_name varchar(50),
 	insert_date datetime,
 	updated_date datetime
 );
